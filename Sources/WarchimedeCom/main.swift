@@ -1,6 +1,7 @@
 import Foundation
 import Publish
 import Plot
+import SplashPublishPlugin
 
 // This type acts as the configuration for your website.
 struct WarchimedeCom: Website {
@@ -22,4 +23,12 @@ struct WarchimedeCom: Website {
 }
 
 // This will generate your website using the built-in Foundation theme:
-try WarchimedeCom().publish(withTheme: .foundation)
+// try WarchimedeCom().publish(withTheme: .foundation)
+try WarchimedeCom().publish(using: [
+  .installPlugin(.splash(withClassPrefix: "")),
+  .addMarkdownFiles(),
+  .copyResources(),
+  .generateHTML(withTheme: .warchimede),
+  .generateRSSFeed(including: [.posts]),
+  .generateSiteMap()
+])
