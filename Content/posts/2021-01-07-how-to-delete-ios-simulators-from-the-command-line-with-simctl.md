@@ -3,7 +3,7 @@ date: 2021-01-07 17:30
 description: Use xcrun simctl to free some disk space
 tags: ios, xcode, command-line
 ---
-# How to delete iOS simulators from the command line with simctl
+# How to delete iOS simulators from the command line with `simctl`
 
 If you want to free some disk space by removing obsolete simulators after a fresh Xcode update, or to delete a specific device, you can use a `xcrun` subcommand named `simctl delete`:
 

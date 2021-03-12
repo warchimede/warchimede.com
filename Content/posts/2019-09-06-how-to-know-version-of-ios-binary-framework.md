@@ -1,6 +1,6 @@
 ---
 date: 2019-09-06 17:30
-description:
+description: PlistBuddy is your friend
 tags: ios, xcode, command-line
 ---
 # How to know the version of an iOS binary framework

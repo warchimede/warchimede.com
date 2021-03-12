@@ -1,9 +1,9 @@
 ---
 date: 2020-03-26 17:30
-description:
+description: hmac and cheese
 tags: ios, swift
 ---
-# Gist: HMAC SHA256 signature generation in Swift, using CommonCrypto
+# Gist: HMAC SHA256 signature generation in Swift, using `CommonCrypto`
 
 ```swift
 import CommonCrypto

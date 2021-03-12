@@ -3,7 +3,7 @@ date: 2021-01-29 17:30
 description: For when the view hierarchy is painful
 tags: ios, swift
 ---
-# A UIResponder extension to help debug the responder chain in iOS
+# A `UIResponder` extension to help debug the responder chain in iOS
 
 I recently had to debug a complex view hierarchy and find out why touch events were not handled by some `UIViewController` in the responder chain.
 

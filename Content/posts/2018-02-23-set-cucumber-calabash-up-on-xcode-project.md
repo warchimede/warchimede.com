@@ -1,6 +1,6 @@
 ---
 date: 2018-02-23 17:30
-description:
+description: Eat your vegetables
 tags: ios, xcode, cucumber, testing
 ---
 # Set Cucumber and Calabash up on a Xcode Project

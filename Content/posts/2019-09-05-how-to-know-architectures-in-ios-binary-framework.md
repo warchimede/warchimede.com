@@ -1,6 +1,6 @@
 ---
 date: 2019-09-05 17:30
-description:
+description: lipo to the rescue
 tags: ios, xcode, command-line
 ---
 # How to know which architectures are included in an iOS binary framework

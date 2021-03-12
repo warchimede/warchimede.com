@@ -3,7 +3,7 @@ date: 2020-12-17 17:30
 description:
 tags: ios, swift
 ---
-# Gist: Swift String extension allowing conversion to slug format
+# Gist: Swift `String` extension allowing conversion to slug format
 
 ```swift
 import Foundation

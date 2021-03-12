@@ -1,9 +1,9 @@
 ---
 date: 2017-10-05 17:30
-description:
+description: More plist, please
 tags: xcode, ios, command-line
 ---
-# Export .xcarchive to .ipa using xcodebuild for manually signed projects
+# Export `.xcarchive` to `.ipa` using `xcodebuild` for manually signed projects
 
 ## The generic command
 

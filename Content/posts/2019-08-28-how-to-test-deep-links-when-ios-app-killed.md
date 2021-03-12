@@ -1,6 +1,6 @@
 ---
 date: 2019-08-28 17:30
-description:
+description: Use simctl
 tags: ios, xcode, command-line
 ---
 # How to test deep links when an iOS app is killed

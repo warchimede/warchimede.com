@@ -1,9 +1,9 @@
 ---
 date: 2020-12-17 17:30
-description:
+description: Use a mirror for reflection
 tags: ios, swift
 ---
-# Gist: Swift UIDevice extension allowing to extract more precise model name from system information
+# Gist: Swift `UIDevice` extension allowing to extract more precise model name from system information
 
 ```swift
 import Foundation

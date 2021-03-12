@@ -1,6 +1,6 @@
 ---
 date: 2020-12-17 17:30
-description:
+description: a11y is your ally
 tags: ios, swift
 ---
 # Gist: More practical Accessibility in Swift using a protocol and a property wrapper

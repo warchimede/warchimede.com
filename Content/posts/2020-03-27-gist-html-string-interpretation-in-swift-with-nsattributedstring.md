@@ -3,7 +3,7 @@ date: 2020-03-27 17:30
 description:
 tags: ios, swift
 ---
-# Gist: HTML string interpretation in Swift, using NSAttributedString, with custom UIFont support
+# Gist: HTML string interpretation in Swift, using `NSAttributedString`, with custom `UIFont` support
 
 ```swift
 import Foundation
