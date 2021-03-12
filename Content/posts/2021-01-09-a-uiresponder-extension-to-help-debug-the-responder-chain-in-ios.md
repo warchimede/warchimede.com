@@ -1,6 +1,6 @@
 ---
-date: 2021-03-10 17:30
-description: A UIResponder extension to help debug the responder chain in iOS.
+date: 2021-01-29 17:30
+description: A UIResponder extension to help debug the responder chain in iOS
 tags: ios, swift
 ---
 # A UIResponder extension to help debug the responder chain in iOS
