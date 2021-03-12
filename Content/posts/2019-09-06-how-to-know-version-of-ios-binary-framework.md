@@ -7,7 +7,7 @@ tags: ios, xcode, command-line
 
 Either check the `Info.plist` file included in the framework, or use `PlistBuddy`.
 
-## The PlistBuddy way
+## The `PlistBuddy` way
 
 > `PlistBuddy` is a built-in command line tool in macOS for `.plist` editing purposes.
 
