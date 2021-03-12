@@ -1,6 +1,6 @@
 ---
 date: 2021-01-07 17:30
-description: fastlane not needed
+description: fastlane not needed, altool for the win
 tags: ios, xcode, command-line
 ---
 # How to easily upload an iOS .ipa from the command line without fastlane, using the App Store Connect API and altool
