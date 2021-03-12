@@ -9,7 +9,7 @@ I recently had to debug a complex view hierarchy and find out why touch events w
 
 Well, this small `UIResponder` extension turned out to be of great help :
 
-```
+```swift
 public extension UIResponder {
   func printResponderChain() {
     print(self)
