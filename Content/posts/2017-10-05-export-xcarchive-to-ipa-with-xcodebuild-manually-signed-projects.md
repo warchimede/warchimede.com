@@ -8,7 +8,7 @@ tags: xcode, ios, command-line
 ## The generic command
 
 By now, if you are used to export a previously generated `.xcarchive` to  `.ipa` using `xcodebuild` command line tool, you should be familiar with the following command :
-```shell
+```no-highlight
 xcodebuild -exportArchive -archivePath ${ARCHIVE_PATH} \
 -exportPath ${EXPORT_PATH} \
 -exportOptionsPlist ${EXPORT_OPTIONS_PLIST_PATH}.plist
@@ -22,7 +22,7 @@ The only required option was the export method : `app-store`, `ad-hoc`, `enterpr
 
 Thus, your `.plist` file would look like the following :
 
-```XML
+```no-highlight
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -53,7 +53,7 @@ After investigation, this came up while reading `xcodebuild --help` :
 
 It seems that the flag `compileBitcode` being set to `true` by default, makes the whole thing fall apart. The solution is then to explicitly add the flag to the `.plist` and set it to `false` :
 
-```XML
+```no-highlight
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -88,7 +88,7 @@ Since the app is manually signed (as opposed to automatically managed by Xcode),
 
 You should now be fine with the following :
 
-```XML
+```no-highlight
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">

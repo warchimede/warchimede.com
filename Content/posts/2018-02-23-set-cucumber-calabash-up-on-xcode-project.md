@@ -20,7 +20,7 @@ The goal of the project is to demonstrate the use of [cucumber](https://cucumber
 
 In your project's root directory, create a file called **Gemfile**, with the following content:
 
-```ruby
+```no-highlight
 ruby '2.3.3'
 
 source 'https://rubygems.org' do
@@ -41,7 +41,7 @@ Follow this tutorial **until the end of step 3**: https://github.com/calabash/ca
 
 In your project's root directory, create a file called **Podfile**, with the following content:
 
-```ruby
+```no-highlight
 source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '9.0'
@@ -81,7 +81,7 @@ Here is an example of a simple test related to this Xcode project:
 
 - `./features/tap.feature`:
 
-```gherkin
+```no-highlight
 Feature: Get information
   As a user
   I want to be able to tap on a button
@@ -95,7 +95,7 @@ Feature: Get information
 
 - `./features/steps/tap.rb`:
 
-```ruby
+```no-highlight
 Given(/^I am on the welcome screen$/) do
   // Nothing to do here, just wait for things to show
   wait_for do

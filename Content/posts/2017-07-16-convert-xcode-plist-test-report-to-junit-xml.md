@@ -54,13 +54,13 @@ Bingo ! Using `xsltproc`, you will transform your `[STUFF]_TestSummaries.plist` 
 
 Here is the anatomy of the `xsltproc` command :
 
-```shell
+```no-highlight
 xsltproc [{-o | --output} {DESTINATION-FILE | DIRECTORY}] [STYLESHEET] {XML-SOURCE-FILE | -}
 ```
 
 Thus, the full command will look like the following :
 
-```shell
+```no-highlight
 xsltproc -o [DESTINATION_PATH]/report.junit \
 [WHERE_YOU_WANT]/plist_to_junit.xsl \
 [DERIVED_DATA_PATH]/Logs/Test/*_TestSummaries.plist
@@ -69,7 +69,7 @@ xsltproc -o [DESTINATION_PATH]/report.junit \
 All you need now is a nice stylesheet.
 Let's cut to the chase and let me provide you with some magical stylesheet that - although imperfect - should work :
 
-```XML
+```no-highlight
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 version="1.0">
@@ -103,7 +103,7 @@ Save this code in a file named `plist_to_junit.xsl`.
 
 Now in your unit test script, which will be executed by Jenkins :
 
-```shell
+```no-highlight
 #!/bin/bash -e
 
 xcodebuild [PARAMS] clean build test
@@ -122,7 +122,7 @@ Yet, the xsl file is definitely perfectible, so feel free to try it out and tell
 
 Here is a simpler and more accurate stylesheet which will avoid counting tests twice when you have multiple test targets :
 
-```XML
+```no-highlight
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 version="1.0">

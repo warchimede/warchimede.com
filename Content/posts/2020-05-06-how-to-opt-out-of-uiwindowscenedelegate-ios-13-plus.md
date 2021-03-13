@@ -39,6 +39,7 @@ func application(_ application: UIApplication, didDiscardSceneSessions sceneSess
 ```
 
 Then, add the `window` property to your `AppDelegate`:
+
 ```swift
 var window: UIWindow?
 ```

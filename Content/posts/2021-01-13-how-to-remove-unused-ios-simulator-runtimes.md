@@ -6,12 +6,14 @@ tags: ios, xcode, command-line
 # How to remove unused iOS simulator runtimes
 
 If you want to free some disk space by removing unused, unsupported or obsolete iOS simulator runtimes, you can first use the `xcrun` subcommand dedicated to managing simulators, `simctl`, to detect which runtime to delete:
-```
+
+```no-highlight
 xcrun simctl list runtimes
 ```
 
 The ouput will look like the following:
-```
+
+```no-highlight
 == Runtimes ==
 iOS 9.3 (9.3 - 13E233) - com.apple.CoreSimulator.SimRuntime.iOS-9-3 (unavailable, The iOS 9.3 simulator runtime is not supported on hosts after macOS 10.14.99.)
 iOS 10.3 (10.3.1 - 14E8301) - com.apple.CoreSimulator.SimRuntime.iOS-10-3 (unavailable, The iOS 10.3 simulator runtime is not supported on hosts after macOS 10.15.99.)

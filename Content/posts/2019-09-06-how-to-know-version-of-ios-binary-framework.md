@@ -12,10 +12,10 @@ Either check the `Info.plist` file included in the framework, or use `PlistBuddy
 > `PlistBuddy` is a built-in command line tool in macOS for `.plist` editing purposes.
 
 Use the following command to display the `Bundle Short Version` of `StuffManager.framework` for instance:
-```sh
+```no-highlight
 /usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "StuffManager.framework/Info.plist"
 ```
 The output should be similar to:
-```sh
+```no-highlight
 6.31.0
 ```

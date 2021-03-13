@@ -40,7 +40,7 @@ This step is very important for `altool` to locate your API key.
 
 You can now use the following to upload your `.ipa` to App Store Connect:
 
-```
+```no-highlight
 xcrun altool --upload-app -f <PATH_TO_IPA>.ipa --apiKey <KEY_ID> --apiIssuer <ISSUER_ID>
 ```
 
@@ -48,7 +48,7 @@ xcrun altool --upload-app -f <PATH_TO_IPA>.ipa --apiKey <KEY_ID> --apiIssuer <IS
 
 Open a new file named `upload_ipa.sh` and paste the following:
 
-```
+```no-highlight
 #!/bin/bash
 
 echo "Uploading IPA to App Store Connect"
@@ -59,7 +59,7 @@ xcrun altool --upload-app -f $1 \
 
 Save the file somewhere handy, and make it executable with this command:
 
-```
+```no-highlight
 chmod +x upload_ipa.sh
 ```
 
@@ -67,6 +67,6 @@ chmod +x upload_ipa.sh
 
 Finally, you can upload your freshly built `.ipa` to App Store Connect with your brand new script:
 
-```
+```no-highlight
 ./upload_ipa.sh <PATH_TO_IPA>.ipa
 ```
