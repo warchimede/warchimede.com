@@ -8,6 +8,16 @@ public extension Node where Context: HTMLContext {
     ])
   }
 
+  static func rect(x: UInt, y: UInt, width: UInt, height: UInt, nodes: Node<HTML.BodyContext>...) -> Node {
+    return .element(named: "rect", nodes: [
+      .attribute(named:"x", value: "\(x)"),
+      .attribute(named:"y", value: "\(y)"),
+      .attribute(named:"width", value: "\(width)"),
+      .attribute(named:"height", value: "\(height)"),
+      .forEach(nodes) { $0 }
+    ])
+  }
+
   static func svg(viewBox: String, nodes: Node<HTML.BodyContext>...) -> Node<HTML.AnchorContext> {
     return .element(named: "svg", nodes: [
       .attribute(named: "xmlns", value: "http://www.w3.org/2000/svg"),
