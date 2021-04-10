@@ -197,6 +197,12 @@ pre code .preprocessing {
   padding: 6px 10px;
 }
 
+a.social-icon svg {
+  height: 50px;
+  width: 50px;
+  padding: 8px;
+}
+
 footer {
   color: #8a8a8a;
 }
