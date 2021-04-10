@@ -10,10 +10,19 @@ public extension Node where Context: HTMLContext {
 
   static func rect(x: UInt, y: UInt, width: UInt, height: UInt, nodes: Node<HTML.BodyContext>...) -> Node {
     return .element(named: "rect", nodes: [
-      .attribute(named:"x", value: "\(x)"),
-      .attribute(named:"y", value: "\(y)"),
-      .attribute(named:"width", value: "\(width)"),
-      .attribute(named:"height", value: "\(height)"),
+      .attribute(named: "x", value: "\(x)"),
+      .attribute(named: "y", value: "\(y)"),
+      .attribute(named: "width", value: "\(width)"),
+      .attribute(named: "height", value: "\(height)"),
+      .forEach(nodes) { $0 }
+    ])
+  }
+
+  static func circle(cx: UInt, cy: UInt, r: UInt, nodes: Node<HTML.BodyContext>...) -> Node {
+    return .element(named: "circle", nodes: [
+      .attribute(named: "cx", value: "\(cx)"),
+      .attribute(named: "cy", value: "\(cy)"),
+      .attribute(named: "r", value: "\(r)"),
       .forEach(nodes) { $0 }
     ])
   }
