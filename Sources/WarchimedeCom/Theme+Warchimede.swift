@@ -65,6 +65,7 @@ private struct WarchimedeHTMLFactory<Site: Website>: HTMLFactory {
         .header(for: context, selectedSection: item.sectionID),
         .wrapper(
           .article(
+            .p(.text(item.date.formatted)),
             .div(
               .class("content"),
               .contentBody(item.body)
