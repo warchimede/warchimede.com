@@ -189,13 +189,8 @@ private extension Node where Context == HTML.BodyContext {
   }
 
   static func itemListNode<T: Website>(for item: Item<T>, on site: T) -> Node {
-    let formatter = DateFormatter()
-    formatter.locale = Locale(identifier: "en_US")
-    formatter.dateStyle = .medium
-    formatter.timeStyle = .none
-
     return .article(
-      .p(.text(formatter.string(from: item.date))),
+      .p(.text(item.date.formatted)),
       .h1(.a(
         .href(item.path),
         .text(item.title)
