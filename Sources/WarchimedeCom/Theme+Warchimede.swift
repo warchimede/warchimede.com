@@ -65,6 +65,7 @@ private struct WarchimedeHTMLFactory<Site: Website>: HTMLFactory {
         .header(for: context, selectedSection: item.sectionID),
         .wrapper(
           .article(
+            .p(.text(item.date.formatted)),
             .div(
               .class("content"),
               .contentBody(item.body)
@@ -183,15 +184,20 @@ private extension Node where Context == HTML.BodyContext {
     return .ul(
       .class("item-list"),
       .forEach(items) { item in
-        .li(.article(
-          .h1(.a(
-            .href(item.path),
-            .text(item.title)
-          )),
-          .tagList(for: item, on: site),
-          .p(.text(item.description))
-        ))
+        .li(itemListNode(for: item, on: site))
       }
+    )
+  }
+
+  static func itemListNode<T: Website>(for item: Item<T>, on site: T) -> Node {
+    return .article(
+      .p(.text(item.date.formatted)),
+      .h1(.a(
+        .href(item.path),
+        .text(item.title)
+      )),
+      .tagList(for: item, on: site),
+      .p(.text(item.description))
     )
   }
 
