@@ -20,7 +20,7 @@ private struct WarchimedeHTMLFactory<Site: Website>: HTMLFactory {
       .body(
         .header(for: context, selectedSection: nil),
         .wrapper(
-          .h1(.text(index.title)),
+          .h1(.text("Hello there, my name is William 👋🏽")),
           .p(
             .class("description"),
             .text(context.site.description)

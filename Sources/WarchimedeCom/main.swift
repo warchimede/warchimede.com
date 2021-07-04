@@ -16,8 +16,8 @@ struct WarchimedeCom: Website {
 
   // Update these properties to configure your website:
   var url = URL(string: "https://warchimede.com")!
-  var name = "warchimede.com"
-  var description = "A description of warchimede.com"
+  var name = "Please Review"
+  var description = "I am a work-in-progress professionally acting as a software architect @ France Télévisions"
   var language: Language { .english }
   var imagePath: Path? { nil }
 }
