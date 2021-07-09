@@ -17,7 +17,7 @@ Here is a step-by-step guide explaining how I proceed. 🤓
 
 All the necessary work will be done with or within the `.app`, thus it is easier to create a working directory and extract it there right away:
 
-```sh
+```no-highlight
 cp -r ARCHIVE.xcarchive/Products/Applications/APP.app .
 ```
 
@@ -25,7 +25,7 @@ cp -r ARCHIVE.xcarchive/Products/Applications/APP.app .
 
 Now we need to start updating the app's `Info.plist`, so let's use the right tool for the job, aka `PlistBuddy` : 🔧
 
-```sh
+```no-highlight
 # update the app
 /usr/libexec/PlistBuddy APP.app/Info.plist -c "set :CFBundleIdentifier APP_BUNDLE_ID"
 
@@ -39,7 +39,7 @@ Before re-signing the app, we need to update its entitlements.
 
 Let's get these sneaky bastards thanks to `codesign` : ✍️
 
-```sh
+```no-highlight
 # app's entitlements
 codesign -d --entitlements :- APP.app > APP_ENTITLEMENTS.plist
 
@@ -53,7 +53,7 @@ Again, call `PlistBuddy` to the rescue !
 
 > This time, we will use several `PlistBuddy` commands in a row for the entitlements update. Instead of using `-c` to execute one change at a time, we will load the `.plist` with the tool, tell it each task we want it to execute, then `save` the `.plist` and `exit` when we are done.
 
-```sh
+```no-highlight
 # update app's entitlements
 /usr/libexec/PlistBuddy APP_ENTITLEMENT.plist
 set :application-identifier TEAM_ID.APP_BUNDLE_ID
@@ -75,7 +75,7 @@ exit
 
 It is time to destroy the current codesigning by fire. 🔥
 
-```sh
+```no-highlight
 rm -rf APP.app/_CodeSignature
 rm -rf APP.app/Frameworks/*/_CodeSignature
 rm -rf APP.app/PlugIns/*.appex/_CodeSignature
@@ -85,7 +85,7 @@ rm -rf APP.app/PlugIns/*.appex/_CodeSignature
 
 The last step before signing is to put the proper provisioning profiles in the app and its extensions :
 
-```sh
+```no-highlight
 cp APP_PROFILE.mobileprovision APP.app/embedded.mobileprovision
 
 cp EXTENSION_PROFILE.mobileprovision APP.app/PlugIns/EXTENSION.appex/embedded.mobileprovision
@@ -95,7 +95,7 @@ cp EXTENSION_PROFILE.mobileprovision APP.app/PlugIns/EXTENSION.appex/embedded.mo
 
 🚨 Be careful, **respect this exact order** when using `codesign` to re-sign the app :
 
-```sh
+```no-highlight
 # first, frameworks
 codesign -f -s "Apple Distribution: CERTIFICATE" APP.app/Frameworks/*
 
@@ -110,7 +110,7 @@ codesign -f -s "Apple Distribution: CERTIFICATE" --entitlements APP_ENTITLEMENTS
 
 Last but not least, make the `.ipa` for your newly signed `.app` :
 
-```sh
+```no-highlight
 # some scaffolding first
 mkdir output
 mkdir output/Payload
