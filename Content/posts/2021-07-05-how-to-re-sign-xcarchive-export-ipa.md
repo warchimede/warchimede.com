@@ -15,7 +15,7 @@ Here is a step-by-step guide explaining how I proceed. 🤓
 
 ## 0️⃣ Extract the `.app` from the `.xcarchive`
 
-All the necessary work will be done with or within the `.app`, thus it is easier to create a working directory and extract it there right away:
+All the necessary work will be done with or within the `.app`, thus it is easier to create a working directory and extract it there right away :
 
 ```no-highlight
 cp -r ARCHIVE.xcarchive/Products/Applications/APP.app .
@@ -33,7 +33,7 @@ Now we need to start updating the app's `Info.plist`, so let's use the right too
 /usr/libexec/PlistBuddy APP.app/PlugIns/EXTENSION.appex/Info.plist -c "set :CFBundleIdentifier EXTENSION_BUNDLE_ID"
 ```
 
-## 3️⃣ Extract entitlements
+## 2️⃣ Extract the entitlements
 
 Before re-signing the app, we need to update its entitlements.
 
@@ -47,7 +47,7 @@ codesign -d --entitlements :- APP.app > APP_ENTITLEMENTS.plist
 codesign -d --entitlements :- APP.app/PlugIns/EXTENSION.appex > EXTENSION_ENTITLEMENTS.plist
 ```
 
-## 4️⃣ Update entitlements data
+## 3️⃣ Update the entitlements data
 
 Again, call `PlistBuddy` to the rescue !
 
@@ -71,7 +71,7 @@ save
 exit
 ```
 
-## 5️⃣ Remove code signature
+## 4️⃣ Remove the code signature
 
 It is time to destroy the current codesigning by fire. 🔥
 
@@ -81,17 +81,17 @@ rm -rf APP.app/Frameworks/*/_CodeSignature
 rm -rf APP.app/PlugIns/*.appex/_CodeSignature
 ```
 
-## 6️⃣ Replace provisioning profiles
+## 5️⃣ Replace the provisioning profiles
 
 The last step before signing is to put the proper provisioning profiles in the app and its extensions :
 
-```no-highlight
+```sh
 cp APP_PROFILE.mobileprovision APP.app/embedded.mobileprovision
 
 cp EXTENSION_PROFILE.mobileprovision APP.app/PlugIns/EXTENSION.appex/embedded.mobileprovision
 ```
 
-## 7️⃣ Sign the `.app`
+## 6️⃣ Sign the `.app`
 
 🚨 Be careful, **respect this exact order** when using `codesign` to re-sign the app :
 
@@ -106,7 +106,7 @@ codesign -f -s "Apple Distribution: CERTIFICATE" --entitlements EXTENSION_ENTITL
 codesign -f -s "Apple Distribution: CERTIFICATE" --entitlements APP_ENTITLEMENTS.plist APP.app
 ```
 
-## 8️⃣ Create the `.ipa` 🎁
+## 7️⃣ Create the `.ipa` 🎁
 
 Last but not least, make the `.ipa` for your newly signed `.app` :
 
@@ -126,4 +126,4 @@ cd output
 zip -qr APP.ipa .
 ```
 
-## 9️⃣ Submit the app for review 🤞🏽
+## 8️⃣ Submit the app for review 🤞🏽
