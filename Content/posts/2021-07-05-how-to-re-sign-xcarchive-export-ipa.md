@@ -85,7 +85,7 @@ rm -rf APP.app/PlugIns/*.appex/_CodeSignature
 
 The last step before signing is to put the proper provisioning profiles in the app and its extensions :
 
-```sh
+```no-highlight
 cp APP_PROFILE.mobileprovision APP.app/embedded.mobileprovision
 
 cp EXTENSION_PROFILE.mobileprovision APP.app/PlugIns/EXTENSION.appex/embedded.mobileprovision
