@@ -1,23 +1,25 @@
-// swift-tools-version:5.4
+// swift-tools-version:5.10
 
 import PackageDescription
 
+let name = "WarchimedeCom"
 let package = Package(
-    name: "WarchimedeCom",
+    name: name,
+    platforms: [.macOS(.v14)],
     products: [
-        .executable(
-            name: "WarchimedeCom",
-            targets: ["WarchimedeCom"]
-        )
+        .executable(name: name, targets: [name])
     ],
     dependencies: [
-        .package(name: "Publish", url: "https://github.com/johnsundell/publish.git", from: "0.8.0"),
-        .package(name: "SplashPublishPlugin", url: "https://github.com/johnsundell/splashpublishplugin", from: "0.1.0")
+        .package(url: "https://github.com/johnsundell/publish.git", from: "0.9.0"),
+        .package(url: "https://github.com/johnsundell/splashpublishplugin.git", from: "0.2.0")
     ],
     targets: [
         .target(
-            name: "WarchimedeCom",
-            dependencies: ["Publish", "SplashPublishPlugin"]
+            name: name,
+            dependencies: [
+              .product(name:"Publish", package:"publish"),
+              .product(name:"SplashPublishPlugin", package:"splashpublishplugin")
+            ]
         )
     ]
 )
