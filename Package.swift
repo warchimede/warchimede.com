@@ -14,7 +14,7 @@ let package = Package(
         .package(url: "https://github.com/johnsundell/splashpublishplugin.git", from: "0.2.0")
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: name,
             dependencies: [
               .product(name:"Publish", package:"publish"),
